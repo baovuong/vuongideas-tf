@@ -1,16 +1,15 @@
-#include <QNetworkRequest>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QJsonDocument>
 
 #include "imgur.h"
 
 
 // helper things
 // setting clientId
-void setClientId(QNetworkRequest & request)
+void Imgur::setClientId(QNetworkRequest & request)
 {
-    request.setHeader(QByteArray("authorization"),
-                      QByteArray(QString("Client-ID %1").arg(this->clientId)));
+    request.setRawHeader(QByteArray("authorizatio"), QString("Client-ID %1").arg(this->clientId).toUtf8());
 }
 
 const QJsonObject & jsonFromRequest(const QNetworkRequest & request)
@@ -45,14 +44,14 @@ Imgur::~Imgur()
 
 const QJsonObject & Imgur::image(const char* imageHash)
 {
-    QNetworkRequest request(this->baseUrl->resolve(QString("image/%1").arg(imageHash)));
+    QNetworkRequest request(this->baseUrl->resolved(QString("image/%1").arg(imageHash)));
     setClientId(request);
     return jsonFromRequest(request);
 }
 
 const QJsonObject & Imgur::gallerySearch(const char* q, const char* sort = "time", const char* window = "all", int page = 1)
 {
-    QNetworkRequest request(this->baseUrl->resolve(QString("gallery/search/%1/%2/%3?q=%4")
+    QNetworkRequest request(this->baseUrl->resolved(QString("gallery/search/%1/%2/%3?q=%4")
                                                   .arg(sort)
                                                   .arg(window)
                                                   .arg(page)

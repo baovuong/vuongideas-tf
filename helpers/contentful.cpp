@@ -8,5 +8,6 @@ Contentful::Contentful(const char* spaceId, const char* accessToken) : Applicati
 
 const QByteArray & Contentful::getAsset(const char* assetId)
 {
-    QString url = QString("https://cdn.contentful.com").arg();
+    //QString url = QString("https://cdn.contentful.com").arg();
+    return 0;
 }

@@ -11,8 +11,8 @@ public:
     const QByteArray & getAsset(const char* assetId);
     QVector<const QByteArray&> getAssets(); 
 private:
-    const QString spaceId;
-    const QString accessToken;
+    QString spaceId;
+    QString accessToken;
 };
 
 #endif // CONTENTFUL_H

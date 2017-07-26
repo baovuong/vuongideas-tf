@@ -4,6 +4,7 @@
 #include <TGlobal>
 
 #include <QJsonObject>
+#include <QNetworkRequest>
 #include <QUrl>
 
 #include "applicationhelper.h"
@@ -20,6 +21,8 @@ public:
 private:
     QString clientId;
     QUrl* baseUrl;
+
+    void setClientId(QNetworkRequest &);
 };
 
 #endif // IMGUR_H
