@@ -4,6 +4,7 @@
 void HomeController::index()
 {
     // write code
+    render();
 }
 
 // Don't remove below this line
