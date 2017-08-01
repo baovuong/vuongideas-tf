@@ -4,5 +4,5 @@
 *.so.1.0.0
 *.o
 moc_*
-lib
+lib/*
 log
