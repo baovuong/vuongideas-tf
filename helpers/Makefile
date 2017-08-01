@@ -51,11 +51,13 @@ OBJECTS_DIR   = ./
 SOURCES       = applicationhelper.cpp \
 		contentful.cpp \
 		imgur.cpp \
-		mediathings.cpp 
+		mediathings.cpp \
+		statistics.cpp 
 OBJECTS       = applicationhelper.o \
 		contentful.o \
 		imgur.o \
-		mediathings.o
+		mediathings.o \
+		statistics.o
 DIST          = ../values.ini \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -124,10 +126,12 @@ DIST          = ../values.ini \
 		helpers.pro applicationhelper.h \
 		contentful.h \
 		imgur.h \
-		mediathings.h applicationhelper.cpp \
+		mediathings.h \
+		statistics.h applicationhelper.cpp \
 		contentful.cpp \
 		imgur.cpp \
-		mediathings.cpp
+		mediathings.cpp \
+		statistics.cpp
 QMAKE_TARGET  = helper
 DESTDIR       = ../lib/
 TARGET        = libhelper.so.1.0.0
@@ -318,8 +322,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents applicationhelper.h contentful.h imgur.h mediathings.h $(DISTDIR)/
-	$(COPY_FILE) --parents applicationhelper.cpp contentful.cpp imgur.cpp mediathings.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents applicationhelper.h contentful.h imgur.h mediathings.h statistics.h $(DISTDIR)/
+	$(COPY_FILE) --parents applicationhelper.cpp contentful.cpp imgur.cpp mediathings.cpp statistics.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -374,6 +378,10 @@ mediathings.o: mediathings.cpp imgur.h \
 		applicationhelper.h \
 		mediathings.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mediathings.o mediathings.cpp
+
+statistics.o: statistics.cpp statistics.h \
+		applicationhelper.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o statistics.o statistics.cpp
 
 ####### Install
 

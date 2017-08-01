@@ -18,3 +18,5 @@ HEADERS += imgur.h
 SOURCES += imgur.cpp
 HEADERS += mediathings.h
 SOURCES += mediathings.cpp
+HEADERS += statistics.h
+SOURCES += statistics.cpp
