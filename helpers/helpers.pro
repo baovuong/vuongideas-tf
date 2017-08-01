@@ -16,3 +16,5 @@ HEADERS += contentful.h
 SOURCES += contentful.cpp
 HEADERS += imgur.h
 SOURCES += imgur.cpp
+HEADERS += mediathings.h
+SOURCES += mediathings.cpp

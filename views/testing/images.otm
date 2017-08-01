@@ -1,0 +1,7 @@
+@foreach : 
+tfetch(QList<QString>, links);
+foreach (auto & l, links) {
+    %%
+}
+
+@link +== a("src", l)

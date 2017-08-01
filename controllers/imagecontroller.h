@@ -9,7 +9,9 @@ class T_CONTROLLER_EXPORT ImageController : public ApplicationController
     Q_OBJECT
 public:
     Q_INVOKABLE
-    ImageController() : ApplicationController() { }
+    ImageController() : ApplicationController() 
+    {
+    }
 
 public slots:
     void fetch();

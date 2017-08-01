@@ -20,3 +20,5 @@ HEADERS += homecontroller.h
 SOURCES += homecontroller.cpp
 HEADERS += imagecontroller.h
 SOURCES += imagecontroller.cpp
+HEADERS += testingcontroller.h
+SOURCES += testingcontroller.cpp
