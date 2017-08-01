@@ -9,21 +9,27 @@
 // setting clientId
 void Imgur::setClientId(QNetworkRequest & request)
 {
-    request.setRawHeader(QByteArray("authorizatio"), QString("Client-ID %1").arg(this->clientId).toUtf8());
+    request.setRawHeader(QByteArray("authorization"), QString("Client-ID %1").arg(this->clientId).toUtf8());
 }
 
-const QJsonObject & jsonFromRequest(const QNetworkRequest & request)
+QJsonObject jsonFromRequest(const QNetworkRequest & request)
 {
-    QEventLoop eventLoop;
     QNetworkAccessManager nam;
-    QObject::connect(&nam, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+    QEventLoop namLoop;
+    QObject::connect(&nam, SIGNAL(finished(QNetworkReply*)), &namLoop, SLOT(quit()));
+
     QNetworkReply * reply = nam.get(request);
-    eventLoop.exec(); 
+    namLoop.exec();
+
     QJsonObject output;
     if (reply->error() == QNetworkReply::NoError)
     {
         QJsonDocument jsonResponse = QJsonDocument::fromJson(reply->readAll());
         output = jsonResponse.object();
+    }
+    else
+    {
+        output["error"] = reply->errorString();
     }
     delete reply;
     
@@ -31,9 +37,9 @@ const QJsonObject & jsonFromRequest(const QNetworkRequest & request)
 }
 
 
-Imgur::Imgur(const char* clientId) : ApplicationHelper()
+Imgur::Imgur(QString clientId) : ApplicationHelper()
 {
-    this->clientId = QString::fromUtf8(clientId);
+    this->clientId = clientId;
     this->baseUrl = new QUrl("https://api.imgur.com/3/");
 }
 
@@ -42,14 +48,14 @@ Imgur::~Imgur()
     delete this->baseUrl;
 }
 
-const QJsonObject & Imgur::image(const char* imageHash)
+QJsonObject Imgur::image(const char* imageHash)
 {
     QNetworkRequest request(this->baseUrl->resolved(QString("image/%1").arg(imageHash)));
     setClientId(request);
     return jsonFromRequest(request);
 }
 
-const QJsonObject & Imgur::gallerySearch(const char* q, const char* sort = "time", const char* window = "all", int page = 1)
+QJsonObject Imgur::gallerySearch(const char* q, const char* sort, const char* window, int page)
 {
     QNetworkRequest request(this->baseUrl->resolved(QString("gallery/search/%1/%2/%3?q=%4")
                                                   .arg(sort)
@@ -60,3 +66,9 @@ const QJsonObject & Imgur::gallerySearch(const char* q, const char* sort = "time
     return jsonFromRequest(request);
 }
 
+QJsonObject Imgur::albumImages(const QString & albumHash)
+{
+    QNetworkRequest request(this->baseUrl->resolved(QString("album/%1/images").arg(albumHash)));
+    setClientId(request);
+    return jsonFromRequest(request);
+}

@@ -12,11 +12,12 @@
 class T_HELPER_EXPORT Imgur : public ApplicationHelper
 {
 public:
-    Imgur(const char* clientId);
+    Imgur(QString clientId);
     ~Imgur();
     
-    const QJsonObject & image(const char* imageHash);
-    const QJsonObject & gallerySearch(const char* q, const char* sort, const char* window, int page);
+    QJsonObject image(const char* imageHash);
+    QJsonObject gallerySearch(const char* q, const char* sort = "time", const char* window = "all", int page = 1);
+    QJsonObject albumImages(const QString & albumHash);
 
 private:
     QString clientId;

@@ -1,7 +1,7 @@
 TARGET = controller
 TEMPLATE = lib
 CONFIG += shared c++11 x86_64
-QT += network sql xml
+QT += network sql xml concurrent
 QT -= gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += qml
 DEFINES += TF_DLL
@@ -18,3 +18,5 @@ HEADERS += blogcontroller.h
 SOURCES += blogcontroller.cpp
 HEADERS += homecontroller.h
 SOURCES += homecontroller.cpp
+HEADERS += imagecontroller.h
+SOURCES += imagecontroller.cpp

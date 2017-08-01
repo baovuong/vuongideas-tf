@@ -23,3 +23,96 @@
 2017-07-27 11:39:27 INFO  [23616] TreeFrog application servers shutting down
 2017-07-27 11:39:32 INFO  [23616] TreeFrog application servers shutdown completed
 2017-07-27 11:50:57 WARN  [27533] Reading a socket timed out after 10 seconds. Descriptor:10
+2017-07-27 12:18:11 WARN  [4987] Reading a socket timed out after 10 seconds. Descriptor:10
+2017-07-27 12:18:40 ERROR [4986] Aborted at 1501172320 (unix time) try "date -d @1501172320" if you are using GNU date
+SIGSEGV (@0x0) received by PID 4933 (TID 4986) ; stack trace:
+PC: @     0x7ffff707483c  (unknown)
+    @     0x7ffff6c0f670  (unknown)
+    @     0x7ffff707483c  (unknown)
+    @     0x7ffff79b4e14  (unknown)
+    @     0x7ffff10c4770  ImageController::fetch()
+    @     0x7ffff10c51ca  ImageController::qt_static_metacall()
+    @     0x7ffff70a39ee  (unknown)
+    @     0x7ffff78cea92  (unknown)
+    @     0x7ffff78d3419  (unknown)
+    @     0x7ffff78dc224  (unknown)
+    @     0x7ffff6ec8c98  (unknown)
+    @     0x7ffff6c056da  start_thread
+    @     0x7ffff63a0d7f  (unknown)
+    @                0x0  (unknown)
+
+2017-07-27 12:19:05 WARN  [5294] Reading a socket timed out after 10 seconds. Descriptor:10
+2017-07-27 12:21:37 WARN  [5917] Reading a socket timed out after 10 seconds. Descriptor:10
+2017-07-27 16:13:53 ERROR [21552] Aborted at 1501186433 (unix time) try "date -d @1501186433" if you are using GNU date
+SIGSEGV (@0x0) received by PID 21497 (TID 21552) ; stack trace:
+PC: @     0x7ffff7075550  (unknown)
+    @     0x7ffff6c0f670  (unknown)
+    @     0x7ffff7075550  (unknown)
+    @     0x7ffff0eb62be  Imgur::image()
+    @     0x7ffff10c47c5  ImageController::fetch()
+    @     0x7ffff10c524e  ImageController::qt_static_metacall()
+    @     0x7ffff70a39ee  (unknown)
+    @     0x7ffff78cea92  (unknown)
+    @     0x7ffff78d3419  (unknown)
+    @     0x7ffff78dc224  (unknown)
+    @     0x7ffff6ec8c98  (unknown)
+    @     0x7ffff6c056da  start_thread
+    @     0x7ffff63a0d7f  (unknown)
+    @                0x0  (unknown)
+
+2017-07-31 01:25:03 WARN  [32180] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 01:25:03 ERROR [32180] Failed to load application libraries.
+2017-07-31 01:25:03 ERROR [32180] Server open failed
+2017-07-31 01:25:52 WARN  [596] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 01:25:52 ERROR [596] Failed to load application libraries.
+2017-07-31 01:25:52 ERROR [596] Server open failed
+2017-07-31 01:26:14 WARN  [751] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 01:26:14 ERROR [751] Failed to load application libraries.
+2017-07-31 01:26:14 ERROR [751] Server open failed
+2017-07-31 01:26:29 INFO  [842] TreeFrog Framework version 1.18.0
+2017-07-31 01:26:29 INFO  [842] Qt 5.7.1 / Linux 4.10.0-28-lowlatency
+2017-07-31 01:26:29 INFO  [842] TreeFrog application servers started up.
+2017-07-31 01:26:29 WARN  [848] Cannot load library libcontroller.so: (./libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 01:26:29 WARN  [848] Failed to load application libraries.
+2017-07-31 01:26:29 WARN  [992] No such method: staticInitialize() of ApplicationController
+2017-07-31 01:26:50 INFO  [842] TreeFrog application servers shutting down
+2017-07-31 01:26:58 INFO  [842] TreeFrog application servers shutdown completed
+2017-07-31 01:27:06 WARN  [1252] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 01:27:06 ERROR [1252] Failed to load application libraries.
+2017-07-31 01:27:06 ERROR [1252] Server open failed
+2017-07-31 20:42:26 WARN  [5846] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 20:42:26 ERROR [5846] Failed to load application libraries.
+2017-07-31 20:42:26 ERROR [5846] Server open failed
+2017-07-31 20:44:06 WARN  [6647] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 20:44:06 ERROR [6647] Failed to load application libraries.
+2017-07-31 20:44:06 ERROR [6647] Server open failed
+2017-07-31 21:04:28 WARN  [11648] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 21:04:28 ERROR [11648] Failed to load application libraries.
+2017-07-31 21:04:28 ERROR [11648] Server open failed
+2017-07-31 21:04:44 WARN  [11742] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 21:04:44 ERROR [11742] Failed to load application libraries.
+2017-07-31 21:04:44 ERROR [11742] Server open failed
+2017-07-31 21:05:55 WARN  [12350] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 21:05:55 ERROR [12350] Failed to load application libraries.
+2017-07-31 21:05:55 ERROR [12350] Server open failed
+2017-07-31 21:05:59 WARN  [12384] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 21:05:59 ERROR [12384] Failed to load application libraries.
+2017-07-31 21:05:59 ERROR [12384] Server open failed
+2017-07-31 21:06:01 WARN  [12400] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 21:06:01 ERROR [12400] Failed to load application libraries.
+2017-07-31 21:06:01 ERROR [12400] Server open failed
+2017-07-31 21:06:02 WARN  [12409] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 21:06:02 ERROR [12409] Failed to load application libraries.
+2017-07-31 21:06:02 ERROR [12409] Server open failed
+2017-07-31 22:19:08 WARN  [27852] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 22:19:08 ERROR [27852] Failed to load application libraries.
+2017-07-31 22:19:08 ERROR [27852] Server open failed
+2017-07-31 22:21:12 WARN  [28337] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 22:21:12 ERROR [28337] Failed to load application libraries.
+2017-07-31 22:21:12 ERROR [28337] Server open failed
+2017-07-31 22:21:36 WARN  [28516] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 22:21:36 ERROR [28516] Failed to load application libraries.
+2017-07-31 22:21:36 ERROR [28516] Server open failed
+2017-07-31 22:34:04 WARN  [32001] Cannot load library libcontroller.so: (/home/bvuong/git/vuongideas/lib/libcontroller.so: undefined symbol: _ZN12QtConcurrent16ThreadEngineBase3runEv)
+2017-07-31 22:34:04 ERROR [32001] Failed to load application libraries.
+2017-07-31 22:34:04 ERROR [32001] Server open failed

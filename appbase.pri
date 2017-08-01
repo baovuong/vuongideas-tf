@@ -15,3 +15,6 @@ win32 {
     QMAKE_CXXFLAGS += -std=c++0x
   }
 }
+
+DISTFILES += \
+    $$PWD/values.ini
