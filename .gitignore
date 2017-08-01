@@ -6,4 +6,4 @@
 moc_*
 lib/*
 log
-values.ini
+/values.ini
