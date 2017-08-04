@@ -22,3 +22,5 @@ HEADERS += imagecontroller.h
 SOURCES += imagecontroller.cpp
 HEADERS += testingcontroller.h
 SOURCES += testingcontroller.cpp
+HEADERS += statisticsapicontroller.h
+SOURCES += statisticsapicontroller.cpp

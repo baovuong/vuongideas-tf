@@ -13,7 +13,7 @@ double Statistics::sum(QList<double> data)
     {
         s += entry;
     }
-    return s;
+     return s;
 }
 
 double Statistics::mean(QList<double> data)

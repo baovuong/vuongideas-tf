@@ -4,6 +4,7 @@
 void HomeController::index()
 {
     // write code
+    setLayout("default_layout");
     render();
 }
 
