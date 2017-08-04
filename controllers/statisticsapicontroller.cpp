@@ -1,3 +1,6 @@
+#include <QJsonValue>
+
+
 #include "statistics.h"
 #include "statisticsapicontroller.h"
 
@@ -54,12 +57,29 @@ void StatisticsApiController::standardDeviation()
     }
 }
 
+void StatisticsApiController::digitalNoise()
+{
+    int size = 100;
+    if (httpRequest().hasQueryItem("size")) {
+        size = httpRequest().queryItemValue("size").toInt();
+    }
+    
+    Statistics statistics;
+    QList<double> noise = statistics.digitalNoise(size);
+    QJsonArray output;
+    foreach (double n, noise) {
+        QJsonValue value(n);
+        output.append(value);
+    }
+    renderJson(output);
+}
+
 void StatisticsApiController::histogram()
 {
     // write code
 }
 
-void StatisticsApiController::typical_error()
+void StatisticsApiController::typicalError()
 {
     // write code
 }

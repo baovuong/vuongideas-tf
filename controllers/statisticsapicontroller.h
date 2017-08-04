@@ -15,7 +15,8 @@ public slots:
     void mean();
     void standardDeviation();
     void histogram();
-    void typical_error();
+    void typicalError();
+    void digitalNoise();
 };
 
 #endif // STATISTICSAPICONTROLLER_H

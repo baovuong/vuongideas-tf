@@ -13,8 +13,12 @@ public:
     double mean(QList<double> data);
     double sum(QList<double> data);
     double standardDeviation(QList<double> data);
+    QList<double> digitalNoise(int size);
 private:
     double sumOfSquares(QList<double> data);
+    
+    static bool executed;
+    static void executeGlobal();
 };
 
 #endif // STATISTICS_H

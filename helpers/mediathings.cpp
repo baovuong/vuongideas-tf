@@ -39,11 +39,9 @@ QList<QString> Mediathings::linksFromImgur(QString q)
     QJsonObject object = imgur.gallerySearch(q.toUtf8());
     QJsonArray results = object["data"].toArray();
     QList<QJsonValue> results2;
-    foreach (const QJsonValue & r, results)
-    {
+    foreach (const QJsonValue & r, results) {
         results2.append(r);
     }
-
     QList<QList<QString>> futureResults = QtConcurrent::blockingMapped(results2, fetchImages);
 
     foreach (QList<QString> r, futureResults)
