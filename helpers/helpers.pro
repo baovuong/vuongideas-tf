@@ -20,3 +20,5 @@ HEADERS += mediathings.h
 SOURCES += mediathings.cpp
 HEADERS += statistics.h
 SOURCES += statistics.cpp
+HEADERS += misc.h
+SOURCES += misc.cpp
