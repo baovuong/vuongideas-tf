@@ -7,7 +7,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += qml
 DEFINES += TF_DLL
 DESTDIR = ../lib
 DEPENDPATH +=
-
+LIBS += -lmarkdown
 include(../appbase.pri)
 
 HEADERS += applicationhelper.h
@@ -22,3 +22,5 @@ HEADERS += statistics.h
 SOURCES += statistics.cpp
 HEADERS += misc.h
 SOURCES += misc.cpp
+HEADERS += markdown.h
+SOURCES += markdown.cpp

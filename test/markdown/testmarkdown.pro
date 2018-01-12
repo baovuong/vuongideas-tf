@@ -6,6 +6,6 @@ QT += network sql testlib
 QT -= gui
 DEFINES += TF_DLL
 INCLUDEPATH += ../..
-LIBS += -L../../lib
+LIBS += -L../../lib -lhelper -lmarkdown
 include(../../appbase.pri)
 SOURCES = testmarkdown.cpp      # Specifying the file name

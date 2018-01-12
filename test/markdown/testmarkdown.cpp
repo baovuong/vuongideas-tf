@@ -1,17 +1,20 @@
 #include <TfTest/TfTest>
 
+#include "helpers/markdown.h"
+
 class TestMarkdown : public QObject
 {
     Q_OBJECT
 private slots:
-    void check();
+    void html1();
 };
 
-void TestMarkdown::check()
+void TestMarkdown::html1()
 {
-    int thing = 123;
-    QCOMPARE(thing, 123);
+    Markdown markdown;
+    QString expected = "<h1>hello</h1>";
+    QCOMPARE(expected, markdown.html("# hello"));
 }
 
 TF_TEST_MAIN(TestMarkdown);
-#include "testmarkdown.moc"
+//#include "testmarkdown.moc"
