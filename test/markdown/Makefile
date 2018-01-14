@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DTF_DLL -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/bvuong/git/vuongideas-tf/test/markdown"'
+DEFINES       = -DTF_DLL -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/bvuong/git/vuongideas-tf/test/markdown"'
 CFLAGS        = -m64 -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -m64 -pipe -g -std=c++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I../.. -isystem /usr/include/treefrog -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtTest -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
+INCPATH       = -I. -I../.. -isystem /usr/include/treefrog -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtConcurrent -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtTest -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -36,7 +36,7 @@ DISTNAME      = testmarkdown1.0.0
 DISTDIR = /home/bvuong/git/vuongideas-tf/test/markdown/.tmp/testmarkdown1.0.0
 LINK          = g++
 LFLAGS        = -m64
-LIBS          = $(SUBLIBS) -L../../lib -lhelper -lmarkdown -Wl,-rpath,. -Wl,-rpath,/usr/lib -L/usr/lib -ltreefrog -lQt5Network -lQt5Sql -lQt5Test -lQt5Core -lpthread 
+LIBS          = $(SUBLIBS) -L../../lib -lmarkdown -lhelper -Wl,-rpath,. -Wl,-rpath,/usr/lib -L/usr/lib -ltreefrog -lQt5Concurrent -lQt5Network -lQt5Sql -lQt5Test -lQt5Core -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -207,6 +207,7 @@ Makefile: testmarkdown.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qm
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		testmarkdown.pro \
+		/usr/lib/x86_64-linux-gnu/libQt5Concurrent.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Network.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Sql.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Test.prl \
@@ -275,6 +276,7 @@ Makefile: testmarkdown.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qm
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf:
 testmarkdown.pro:
+/usr/lib/x86_64-linux-gnu/libQt5Concurrent.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Network.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Sql.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Test.prl:
@@ -324,7 +326,7 @@ compiler_moc_source_clean:
 testmarkdown.moc: ../../helpers/markdown.h \
 		../../helpers/applicationhelper.h \
 		testmarkdown.cpp
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/bvuong/git/vuongideas-tf/test/markdown -I/home/bvuong/git/vuongideas-tf -I/usr/include/treefrog -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include testmarkdown.cpp -o testmarkdown.moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/bvuong/git/vuongideas-tf/test/markdown -I/home/bvuong/git/vuongideas-tf -I/usr/include/treefrog -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include testmarkdown.cpp -o testmarkdown.moc
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -337,7 +339,8 @@ compiler_clean: compiler_moc_source_clean
 ####### Compile
 
 testmarkdown.o: testmarkdown.cpp ../../helpers/markdown.h \
-		../../helpers/applicationhelper.h
+		../../helpers/applicationhelper.h \
+		testmarkdown.moc
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o testmarkdown.o testmarkdown.cpp
 
 ####### Install
