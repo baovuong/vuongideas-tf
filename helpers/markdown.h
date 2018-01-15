@@ -8,8 +8,8 @@ class T_HELPER_EXPORT Markdown : public ApplicationHelper
 {
 public:
     Markdown();
-    QString html(const char* input);
-    QString html(QString input);
+    static QString html(const char* input);
+    static QString html(QString input);
     
 };
 

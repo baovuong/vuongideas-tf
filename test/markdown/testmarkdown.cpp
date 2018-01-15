@@ -12,16 +12,14 @@ private slots:
 
 void TestMarkdown::html1()
 {
-    Markdown markdown;
     QString expected = "<h1>hello</h1>\n";
-    QCOMPARE(expected, markdown.html("# hello"));
+    QCOMPARE(expected, Markdown::html("# hello"));
 }
 
 void TestMarkdown::html2()
 {
-  Markdown markdown;
   QString expected = "<p>hello!</p>\n";
-  QCOMPARE(expected, markdown.html("hello!"));
+  QCOMPARE(expected, Markdown::html("hello!"));
 }
 
 
