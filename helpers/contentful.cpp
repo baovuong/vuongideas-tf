@@ -12,8 +12,4 @@ Contentful::~Contentful()
     delete this->baseUrl;
 }
 
-const QByteArray & Contentful::getAsset(const char* assetId)
-{
-    //QString url = QString("https://cdn.contentful.com").arg();
-    return 0;
-}
+

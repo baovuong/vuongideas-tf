@@ -9,14 +9,27 @@ class T_HELPER_EXPORT Contentful : public ApplicationHelper
 public:
     Contentful(const char* spaceId, const char* accessToken);
     ~Contentful();
-    const QJsonObject getEntry(const char* entryId);
-    const QList<QJsonObject> getEntries();
-    const QByteArray & getAsset(const char* assetId);
-    QVector<const QByteArray&> getAssets(); 
+    
+    // Resume
+    ContentfulResume getResume(const char* id);
+    QList<ContentfulResume> getResumes();
+    
+    // Resume Experience
+    ContentfulResumeExperience getResumeExperience(const char* id);
+    QList<ContentfulResumeExperience> getResumeExperiences();
+    QList<ContentfulResumeExperience> getResumeExperiencesByResumeId(const char* resumeId);
     
 private:
     QUrl* baseUrl;
     QString accessToken;
+    
+    // helper methods
+    const QJsonObject getEntry(const char* entryId);
+    const QList<QJsonObject> getEntries();
+    const QByteArray & getAsset(const char* assetId);
+    QVector<const QByteArray&> getAssets();
+    
+    
 };
 
 
@@ -24,24 +37,45 @@ private:
 class ContentfulModel
 {
   public:
-  ContentfulModel();
+  ContentfulModel(QJsonObject);
   ~ContentfulModel();
   private:
-  Contentful* client;
+  QVariantMap values;
 };
 
 class ContentfulResume : public ContentfulModel
 {
 public:
-    ContentfulResume();
+    ContentfulResume(QJsonObject);
     ~ContentfulResume();
+    
+    const QString & getTitle();
+    void setTitle(const QString &);
+    
+    const QString & getName();
+    void setName(const QString &);
+    
+private:
+    QString* title;
+    QString* name;
+    QString* emailAddress;
+    QString* phoneNumber;
+    QList<ContentfulResumeExperience>* experiences;
 };
 
 class ContentfulResumeExperience : public ContentfulModel
 {
 public:
-    ContentfulResumeExperience();
+    ContentfulResumeExperience(QJsonObject);
     ~ContentfulResumeExperience();
+private:
+    QString* company;
+    QString* jobTitle;
+    QDate* startDate;
+    QDate* endDate;
+    bool currentlyEmployed;
+    QString* location;
+    QString* tasks;
 };
 
 #endif // CONTENTFUL_H
