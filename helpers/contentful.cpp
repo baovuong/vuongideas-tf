@@ -13,3 +13,8 @@ Contentful::~Contentful()
 }
 
 
+// ContentfulModel
+ContentfulModel::ContentfulModel(QJsonObject json)
+{
+    
+}

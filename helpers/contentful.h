@@ -2,6 +2,7 @@
 #define CONTENTFUL_H
 
 #include <TGlobal>
+#include <QJsonObject>
 #include "applicationhelper.h"
 
 class T_HELPER_EXPORT Contentful : public ApplicationHelper
@@ -28,19 +29,17 @@ private:
     const QList<QJsonObject> getEntries();
     const QByteArray & getAsset(const char* assetId);
     QVector<const QByteArray&> getAssets();
-    
-    
 };
 
 
 // models
 class ContentfulModel
 {
-  public:
-  ContentfulModel(QJsonObject);
-  ~ContentfulModel();
-  private:
-  QVariantMap values;
+public:
+    ContentfulModel(QJsonObject);
+    ~ContentfulModel();
+protected:
+    QVariantMap values;
 };
 
 class ContentfulResume : public ContentfulModel
@@ -50,10 +49,9 @@ public:
     ~ContentfulResume();
     
     const QString & getTitle();
-    void setTitle(const QString &);
-    
     const QString & getName();
-    void setName(const QString &);
+    const QString & getEmailAddress();
+    QList<ContentfulResumeExperience>* getExperiences();
     
 private:
     QString* title;
