@@ -16,5 +16,10 @@ Contentful::~Contentful()
 // ContentfulModel
 ContentfulModel::ContentfulModel(QJsonObject json)
 {
-    
+    // parse through values, and assign them
+    QJsonValue fields = json.take("fields");
+    if (fields.isUndefined()) {
+        // nothing here, 
+        return;
+    }
 }

@@ -66,6 +66,15 @@ class ContentfulResumeExperience : public ContentfulModel
 public:
     ContentfulResumeExperience(QJsonObject);
     ~ContentfulResumeExperience();
+    
+    const QString & getCompany();
+    const QString & getJobTitle();
+    const QDate & getStartDate();
+    const QDate & getEndDate();
+    bool getCurrentlyEmployed();
+    const QString & getLocation();
+    const QString & getTasks();
+    
 private:
     QString* company;
     QString* jobTitle;
