@@ -39,7 +39,7 @@ public:
     ContentfulModel(QJsonObject);
     ~ContentfulModel();
 protected:
-    QVariantMap values;
+    QVariantMap* values;
 };
 
 class ContentfulResume : public ContentfulModel
